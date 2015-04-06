@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accounts.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Accounts
 {
-   public abstract class Account
+   public abstract class Account :IAccount
     {
         private int m_ID;
 
@@ -22,7 +23,7 @@ namespace Accounts
         public string Currency { private set; get; }
         public string Number { private set; get; }
 
-        private CurrencyAmount m_Balance;
+        public CurrencyAmount m_Balance;
         
 
 
@@ -36,7 +37,7 @@ namespace Accounts
             this.m_Balance.Currency = Currency;
         }
 
-        public Account(string Currency) :this(-1,"X",Currency) {
+        public Account(string Currency) :this(1,Currency,"X") {
 
             
             

@@ -59,6 +59,20 @@
             this.lblEndDate = new System.Windows.Forms.Label();
             this.cmbPeriodUnit = new System.Windows.Forms.ComboBox();
             this.cmbInterestUnit = new System.Windows.Forms.ComboBox();
+            this.lblEndDate_To = new System.Windows.Forms.Label();
+            this.lblStartDate_To = new System.Windows.Forms.Label();
+            this.lblInterestUnit_To = new System.Windows.Forms.Label();
+            this.lablblInteresetPercent_To = new System.Windows.Forms.Label();
+            this.lblPeriodPeiod_To = new System.Windows.Forms.Label();
+            this.lblLimitCurrency_To = new System.Windows.Forms.Label();
+            this.lblPeriodUnit_To = new System.Windows.Forms.Label();
+            this.lblLimitAmount_To = new System.Windows.Forms.Label();
+            this.lblBalanceCurrency_To = new System.Windows.Forms.Label();
+            this.lblBalanceAmount_To = new System.Windows.Forms.Label();
+            this.labelblCurrencyh_Tol19 = new System.Windows.Forms.Label();
+            this.lblNumber_To = new System.Windows.Forms.Label();
+            this.lblId_To = new System.Windows.Forms.Label();
+            this.btnMakeTrasaction = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreateTransactionAccount
@@ -79,6 +93,7 @@
             this.btnCreateDepositAccount.TabIndex = 1;
             this.btnCreateDepositAccount.Text = "Create Deposit Account";
             this.btnCreateDepositAccount.UseVisualStyleBackColor = true;
+            this.btnCreateDepositAccount.Click += new System.EventHandler(this.btnCreateDepositAccount_Click);
             // 
             // txtCurrency
             // 
@@ -316,6 +331,10 @@
             // cmbPeriodUnit
             // 
             this.cmbPeriodUnit.FormattingEnabled = true;
+            this.cmbPeriodUnit.Items.AddRange(new object[] {
+            "Day",
+            "Month",
+            "Year"});
             this.cmbPeriodUnit.Location = new System.Drawing.Point(517, 80);
             this.cmbPeriodUnit.Name = "cmbPeriodUnit";
             this.cmbPeriodUnit.Size = new System.Drawing.Size(121, 21);
@@ -324,17 +343,162 @@
             // cmbInterestUnit
             // 
             this.cmbInterestUnit.FormattingEnabled = true;
+            this.cmbInterestUnit.Items.AddRange(new object[] {
+            "Day",
+            "Month",
+            "Year"});
             this.cmbInterestUnit.Location = new System.Drawing.Point(517, 178);
             this.cmbInterestUnit.Name = "cmbInterestUnit";
             this.cmbInterestUnit.Size = new System.Drawing.Size(121, 21);
             this.cmbInterestUnit.TabIndex = 32;
+            // 
+            // lblEndDate_To
+            // 
+            this.lblEndDate_To.AutoSize = true;
+            this.lblEndDate_To.Location = new System.Drawing.Point(265, 564);
+            this.lblEndDate_To.Name = "lblEndDate_To";
+            this.lblEndDate_To.Size = new System.Drawing.Size(68, 13);
+            this.lblEndDate_To.TabIndex = 45;
+            this.lblEndDate_To.Text = "EndDate_To";
+            // 
+            // lblStartDate_To
+            // 
+            this.lblStartDate_To.AutoSize = true;
+            this.lblStartDate_To.Location = new System.Drawing.Point(265, 545);
+            this.lblStartDate_To.Name = "lblStartDate_To";
+            this.lblStartDate_To.Size = new System.Drawing.Size(82, 13);
+            this.lblStartDate_To.TabIndex = 44;
+            this.lblStartDate_To.Text = "lblStartDAte_To";
+            // 
+            // lblInterestUnit_To
+            // 
+            this.lblInterestUnit_To.AutoSize = true;
+            this.lblInterestUnit_To.Location = new System.Drawing.Point(265, 525);
+            this.lblInterestUnit_To.Name = "lblInterestUnit_To";
+            this.lblInterestUnit_To.Size = new System.Drawing.Size(92, 13);
+            this.lblInterestUnit_To.TabIndex = 43;
+            this.lblInterestUnit_To.Text = "lblInterestUnit_TO";
+            // 
+            // lablblInteresetPercent_To
+            // 
+            this.lablblInteresetPercent_To.AutoSize = true;
+            this.lablblInteresetPercent_To.Location = new System.Drawing.Point(265, 498);
+            this.lablblInteresetPercent_To.Name = "lablblInteresetPercent_To";
+            this.lablblInteresetPercent_To.Size = new System.Drawing.Size(108, 13);
+            this.lablblInteresetPercent_To.TabIndex = 42;
+            this.lablblInteresetPercent_To.Text = "lblInterestPercent_To";
+            // 
+            // lblPeriodPeiod_To
+            // 
+            this.lblPeriodPeiod_To.AutoSize = true;
+            this.lblPeriodPeiod_To.Location = new System.Drawing.Point(265, 450);
+            this.lblPeriodPeiod_To.Name = "lblPeriodPeiod_To";
+            this.lblPeriodPeiod_To.Size = new System.Drawing.Size(98, 13);
+            this.lblPeriodPeiod_To.TabIndex = 41;
+            this.lblPeriodPeiod_To.Text = "lblPeriodPeriod_TO";
+            // 
+            // lblLimitCurrency_To
+            // 
+            this.lblLimitCurrency_To.AutoSize = true;
+            this.lblLimitCurrency_To.Location = new System.Drawing.Point(167, 482);
+            this.lblLimitCurrency_To.Name = "lblLimitCurrency_To";
+            this.lblLimitCurrency_To.Size = new System.Drawing.Size(99, 13);
+            this.lblLimitCurrency_To.TabIndex = 40;
+            this.lblLimitCurrency_To.Text = "lblLimitCurrency_To";
+            // 
+            // lblPeriodUnit_To
+            // 
+            this.lblPeriodUnit_To.AutoSize = true;
+            this.lblPeriodUnit_To.Location = new System.Drawing.Point(265, 475);
+            this.lblPeriodUnit_To.Name = "lblPeriodUnit_To";
+            this.lblPeriodUnit_To.Size = new System.Drawing.Size(87, 13);
+            this.lblPeriodUnit_To.TabIndex = 39;
+            this.lblPeriodUnit_To.Text = "lblPeriodUnit_TO";
+            // 
+            // lblLimitAmount_To
+            // 
+            this.lblLimitAmount_To.AutoSize = true;
+            this.lblLimitAmount_To.Location = new System.Drawing.Point(167, 449);
+            this.lblLimitAmount_To.Name = "lblLimitAmount_To";
+            this.lblLimitAmount_To.Size = new System.Drawing.Size(93, 13);
+            this.lblLimitAmount_To.TabIndex = 38;
+            this.lblLimitAmount_To.Text = "lblLimitAmount_To";
+            // 
+            // lblBalanceCurrency_To
+            // 
+            this.lblBalanceCurrency_To.AutoSize = true;
+            this.lblBalanceCurrency_To.Location = new System.Drawing.Point(53, 564);
+            this.lblBalanceCurrency_To.Name = "lblBalanceCurrency_To";
+            this.lblBalanceCurrency_To.Size = new System.Drawing.Size(117, 13);
+            this.lblBalanceCurrency_To.TabIndex = 37;
+            this.lblBalanceCurrency_To.Text = "lblBalanceCurrency_To";
+            // 
+            // lblBalanceAmount_To
+            // 
+            this.lblBalanceAmount_To.AutoSize = true;
+            this.lblBalanceAmount_To.Location = new System.Drawing.Point(53, 540);
+            this.lblBalanceAmount_To.Name = "lblBalanceAmount_To";
+            this.lblBalanceAmount_To.Size = new System.Drawing.Size(111, 13);
+            this.lblBalanceAmount_To.TabIndex = 36;
+            this.lblBalanceAmount_To.Text = "lblBalanceAmount_To";
+            // 
+            // labelblCurrencyh_Tol19
+            // 
+            this.labelblCurrencyh_Tol19.AutoSize = true;
+            this.labelblCurrencyh_Tol19.Location = new System.Drawing.Point(53, 514);
+            this.labelblCurrencyh_Tol19.Name = "labelblCurrencyh_Tol19";
+            this.labelblCurrencyh_Tol19.Size = new System.Drawing.Size(78, 13);
+            this.labelblCurrencyh_Tol19.TabIndex = 35;
+            this.labelblCurrencyh_Tol19.Text = "lblCurrency_To";
+            // 
+            // lblNumber_To
+            // 
+            this.lblNumber_To.AutoSize = true;
+            this.lblNumber_To.Location = new System.Drawing.Point(53, 482);
+            this.lblNumber_To.Name = "lblNumber_To";
+            this.lblNumber_To.Size = new System.Drawing.Size(73, 13);
+            this.lblNumber_To.TabIndex = 34;
+            this.lblNumber_To.Text = "lblNumber_To";
+            // 
+            // lblId_To
+            // 
+            this.lblId_To.AutoSize = true;
+            this.lblId_To.Location = new System.Drawing.Point(53, 449);
+            this.lblId_To.Name = "lblId_To";
+            this.lblId_To.Size = new System.Drawing.Size(47, 13);
+            this.lblId_To.TabIndex = 33;
+            this.lblId_To.Text = "lblID_To";
+            // 
+            // btnMakeTrasaction
+            // 
+            this.btnMakeTrasaction.Location = new System.Drawing.Point(455, 449);
+            this.btnMakeTrasaction.Name = "btnMakeTrasaction";
+            this.btnMakeTrasaction.Size = new System.Drawing.Size(162, 23);
+            this.btnMakeTrasaction.TabIndex = 46;
+            this.btnMakeTrasaction.Text = "Make Transaction";
+            this.btnMakeTrasaction.UseVisualStyleBackColor = true;
+            this.btnMakeTrasaction.Click += new System.EventHandler(this.btnMakeTrasaction_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1077, 397);
+            this.ClientSize = new System.Drawing.Size(1077, 662);
+            this.Controls.Add(this.btnMakeTrasaction);
+            this.Controls.Add(this.lblEndDate_To);
+            this.Controls.Add(this.lblStartDate_To);
+            this.Controls.Add(this.lblInterestUnit_To);
+            this.Controls.Add(this.lablblInteresetPercent_To);
+            this.Controls.Add(this.lblPeriodPeiod_To);
+            this.Controls.Add(this.lblLimitCurrency_To);
+            this.Controls.Add(this.lblPeriodUnit_To);
+            this.Controls.Add(this.lblLimitAmount_To);
+            this.Controls.Add(this.lblBalanceCurrency_To);
+            this.Controls.Add(this.lblBalanceAmount_To);
+            this.Controls.Add(this.labelblCurrencyh_Tol19);
+            this.Controls.Add(this.lblNumber_To);
+            this.Controls.Add(this.lblId_To);
             this.Controls.Add(this.cmbInterestUnit);
             this.Controls.Add(this.cmbPeriodUnit);
             this.Controls.Add(this.lblEndDate);
@@ -406,6 +570,20 @@
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.ComboBox cmbPeriodUnit;
         private System.Windows.Forms.ComboBox cmbInterestUnit;
+        private System.Windows.Forms.Label lblEndDate_To;
+        private System.Windows.Forms.Label lblStartDate_To;
+        private System.Windows.Forms.Label lblInterestUnit_To;
+        private System.Windows.Forms.Label lablblInteresetPercent_To;
+        private System.Windows.Forms.Label lblPeriodPeiod_To;
+        private System.Windows.Forms.Label lblLimitCurrency_To;
+        private System.Windows.Forms.Label lblPeriodUnit_To;
+        private System.Windows.Forms.Label lblLimitAmount_To;
+        private System.Windows.Forms.Label lblBalanceCurrency_To;
+        private System.Windows.Forms.Label lblBalanceAmount_To;
+        private System.Windows.Forms.Label labelblCurrencyh_Tol19;
+        private System.Windows.Forms.Label lblNumber_To;
+        private System.Windows.Forms.Label lblId_To;
+        private System.Windows.Forms.Button btnMakeTrasaction;
     }
 }
 

@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace Accounts.Accounts
 {
-  //public  class LoanAccount :DepositAccount
-  //  {
+    public class LoanAccount : DepositAccount
+    {
 
 
-  //      public override TransactionStatus DebitAmount(CurrencyAmount amount) {
+        public override TransactionStatus DebitAmount(CurrencyAmount amount)
+        {
 
-  //          return base.CreditAmount(amount);
-  //      }
+            return base.CreditAmount(amount);
+        }
 
-  //      public override TransactionStatus CreditAmount(CurrencyAmount amount)
-  //      {
+        public override TransactionStatus CreditAmount(CurrencyAmount amount)
+        {
 
-  //         return base.DebitAmount(amount);
-  //      }
+            return base.DebitAmount(amount);
+        }
 
-  //  }
+    }
 }

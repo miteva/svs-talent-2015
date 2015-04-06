@@ -9,3 +9,14 @@ C:\Users\student\Desktop\Bank\Bank\obj\Debug\Bank.pdb
 C:\Users\student\Desktop\Bank\Bank\obj\Debug\Bank.frmMain.resources
 C:\Users\student\Desktop\Bank\Bank\bin\Debug\Accounts.dll
 C:\Users\student\Desktop\Bank\Bank\bin\Debug\Accounts.pdb
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\bin\Debug\Bank.exe.config
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\obj\Debug\Bank.exe
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\obj\Debug\Bank.pdb
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\bin\Debug\Bank.exe
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\bin\Debug\Bank.pdb
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\bin\Debug\Accounts.dll
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\bin\Debug\Accounts.pdb
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\obj\Debug\Bank.csprojResolveAssemblyReference.cache
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\obj\Debug\Bank.frmMain.resources
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\obj\Debug\Bank.Properties.Resources.resources
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Bank\obj\Debug\Bank.csproj.GenerateResource.Cache

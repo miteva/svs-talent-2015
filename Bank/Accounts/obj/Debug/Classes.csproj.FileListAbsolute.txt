@@ -3,3 +3,8 @@ C:\Users\student\Desktop\Bank\Accounts\bin\Debug\Accounts.dll
 C:\Users\student\Desktop\Bank\Accounts\bin\Debug\Accounts.pdb
 C:\Users\student\Desktop\Bank\Accounts\obj\Debug\Accounts.dll
 C:\Users\student\Desktop\Bank\Accounts\obj\Debug\Accounts.pdb
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Accounts\bin\Debug\Accounts.dll
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Accounts\bin\Debug\Accounts.pdb
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Accounts\obj\Debug\Classes.csprojResolveAssemblyReference.cache
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Accounts\obj\Debug\Accounts.dll
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Accounts\obj\Debug\Accounts.pdb

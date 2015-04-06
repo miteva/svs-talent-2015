@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accounts.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,8 @@ namespace Accounts.Accounts
 
         public TransactionAccount TransactionAccount { get; private set; }
 
-        public DepositAccount(string currency, TimePeriod depositPeriod, InterestRate interestRate, DateTime startDate, DateTime endDate, TransactionAccount transactionAccount) : base(currency) {
+        public DepositAccount(string currency, TimePeriod depositPeriod, InterestRate interestRate, DateTime startDate, DateTime endDate, TransactionAccount transactionAccount) : base(currency)
+        {
 
             this.m_Period = new TimePeriod();
             this.m_Period = depositPeriod;
@@ -25,10 +27,8 @@ namespace Accounts.Accounts
             this.StartDate = startDate;
             this.EndDate = endDate;
             this.TransactionAccount = transactionAccount;
+    }
 
-
-        }
-
-
+        
     }
 }
