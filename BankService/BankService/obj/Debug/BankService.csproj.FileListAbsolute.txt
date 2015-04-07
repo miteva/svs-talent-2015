@@ -1,0 +1,6 @@
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\BankService\bin\BankService.dll.config
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\BankService\bin\BankService.dll
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\BankService\bin\BankService.pdb
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\BankService\obj\Debug\BankService.dll
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\BankService\obj\Debug\BankService.pdb
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\BankService\obj\Debug\BankService.csprojResolveAssemblyReference.cache

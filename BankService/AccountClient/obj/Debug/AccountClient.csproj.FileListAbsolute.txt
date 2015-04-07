@@ -1,0 +1,6 @@
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\AccountClient\bin\AccountClient.dll.config
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\AccountClient\bin\AccountClient.dll
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\AccountClient\bin\AccountClient.pdb
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\AccountClient\obj\Debug\AccountClient.dll
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\AccountClient\obj\Debug\AccountClient.pdb
+c:\users\miteva\documents\visual studio 2013\Projects\BankService\AccountClient\obj\Debug\AccountClient.csprojResolveAssemblyReference.cache
