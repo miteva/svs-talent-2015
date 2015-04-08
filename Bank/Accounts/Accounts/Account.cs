@@ -35,8 +35,7 @@ namespace Accounts
             this.Currency = Currency;
             this.Number = Number;
             this.m_Balance= new CurrencyAmount();
-            this.m_Balance.Amount = 0;
-            this.m_Balance.Currency = Currency;
+           
         }
 
         public Account(string Currency) :this(AccountHelper.GenerateAccountId(),Currency,"X") {

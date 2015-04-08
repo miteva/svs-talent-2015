@@ -175,6 +175,13 @@ namespace Bank
             lblInterestUnit.Text = depositAccount.m_Interest.Unit.ToString();
             lblStartDate.Text = depositAccount.StartDate.ToString();
             lblEndDate.Text = depositAccount.EndDate.ToString();
+            lblBalanceAmount.Text = a.m_Balance.Amount.ToString();
+            lblBalanceCurrency.Text = a.m_Balance.Currency;
+            lblId.Text = a.ID.ToString();
+            lblLimitAmount.Text = a.m_Balance.Amount.ToString();
+            lblLimitCurrency.Text = a.m_Balance.Currency;
+            lblNumber.Text = a.Number;
+            lblCurrency.Text = a.m_Balance.Currency;
 
 
         }
@@ -246,8 +253,8 @@ namespace Bank
             DateTime endDate = dtpEndDate.Value;
            
             DepositAccount depositAccount = new DepositAccount(limit.Currency, p, iR, startDate, endDate, transactionAccount);
-           
-            TransactionProcessor processor = new TransactionProcessor();
+
+            ITransactionProcessor processor = TransactionProcessor.GetTransactionProcessor();
 
             CurrencyAmount currencyAmount = new CurrencyAmount();
             currencyAmount.Amount = 20000;
@@ -261,13 +268,83 @@ namespace Bank
             //DisplayDepositAccountTo(newDepositAccount);
             //DisplayTransactionAccount(newTranssactionAccount);
 
-            LoanAccount loanAccount = new LoanAccount(limit.Currency, p, iR, startDate, endDate, transactionAccount);
+            ILoanAccount loanAccount = new LoanAccount(limit.Currency, p, iR, startDate, endDate, transactionAccount);
+
+            //   accounts = processor.ProcessTransaction(transactionAccount, loanAccount, currencyAmount, TransactionType.Transfer);
+            //  TransactionAccount newTranssactionAccount = (TransactionAccount)accounts[0];
+            //  LoanAccount newLoanAccount = (LoanAccount)accounts[1];
+            //  DisplayDepositAccountTo(newLoanAccount);
+            //  DisplayTransactionAccount(newTranssactionAccount);
+            DisplayLastTransactionDetail();
+        }
+
+        private void btnMakeGroupTransaction_Click(object sender, EventArgs e)
+        {
+            CurrencyAmount limit = new CurrencyAmount();
+            decimal amount;
+            Decimal.TryParse(txtLimit.Text, out amount);
+            limit.Amount = amount;
+            limit.Currency = txtCurrency.Text.ToString();
+
+
+            TransactionAccount transactionAccount = new TransactionAccount(limit.Amount, limit.Currency);
+
+
+            transactionAccount.m_Balance.Amount = limit.Amount;
+            transactionAccount.m_Balance.Currency = limit.Currency;
+            TimePeriod p = new TimePeriod();
+            int.TryParse(txtPeriodPeriod.Text, out p.Period);
+            string unit = cmbPeriodUnit.Text;
+            if (unit == "Day")
+                p.Unit = UnitOfTime.Day;
+            if (unit == "Month")
+                p.Unit = UnitOfTime.Month;
+            if (unit == "Year")
+                p.Unit = UnitOfTime.Year;
+            InterestRate iR = new InterestRate();
+            decimal.TryParse(txtInterestPercent.Text, out iR.Precent);
+            string interestUnit = cmbInterestUnit.Text;
+            if (unit == "Day")
+                iR.Unit = UnitOfTime.Day;
+            if (unit == "Month")
+                iR.Unit = UnitOfTime.Month;
+            if (unit == "Year")
+                iR.Unit = UnitOfTime.Year;
+            DateTime startDate = dtpStartDate.Value;
+            DateTime endDate = dtpEndDate.Value;
+
+            IDeposiAccount depositAccount = new DepositAccount(limit.Currency, p, iR, startDate, endDate, transactionAccount);
+           
+
+            ILoanAccount loanAccount = new LoanAccount(limit.Currency, p, iR, startDate, endDate, transactionAccount);
+           
+
+            ITransactionProcessor processor = TransactionProcessor.GetTransactionProcessor();
+
+
+
+            CurrencyAmount currencyAmount = new CurrencyAmount();
+            currencyAmount.Amount = 200;
+            currencyAmount.Currency = "MKD";
+
+            IAccount[] accounts = new IAccount[2];
+            accounts[0] = depositAccount;
+            accounts[1] = loanAccount;
+            processor.ProcessGroupTransaction(TransactionType.Debit, currencyAmount, accounts );
             
-            accounts = processor.ProcessTransaction(transactionAccount, loanAccount, currencyAmount, TransactionType.Transfer);
-            TransactionAccount newTranssactionAccount = (TransactionAccount)accounts[0];
-            LoanAccount newLoanAccount = (LoanAccount)accounts[1];
-            DisplayDepositAccountTo(newLoanAccount);
-            DisplayTransactionAccount(newTranssactionAccount);
+            DisplayLastTransactionDetail();
+            //DisplayDepositAccountTo((DepositAccount)accounts[0]);
+            //DisplayDepositAccount((LoanAccount)accounts[1]);
+        }
+
+        private void DisplayLastTransactionDetail()
+        {
+            TransactionProcessor processor = TransactionProcessor.GetTransactionProcessor();
+            TransactionLogEntry log = processor.LastTransaction;
+            DisplayDepositAccount((Account)log.Accounts.ElementAt(0));
+            DisplayDepositAccountTo((Account)log.Accounts.ElementAt(1));
+            lblTransactionLogCount.Text ="There are " +processor.TransactionCount.ToString()+" transaction by now";
+            lbltransactionLogDetails.Text = "The last transaction was in " + log.CurrencyAmount.Currency + " the amount was"+log.CurrencyAmount.Amount+" the status of the"+log.TransactionType +" transaction is "+log.Status;
 
         }
     }

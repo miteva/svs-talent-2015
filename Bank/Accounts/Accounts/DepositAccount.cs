@@ -32,6 +32,8 @@ namespace Accounts.Accounts
             int Id = AccountHelper.GenerateAccountId();
             this.ID = Id;
             this.Number = GenerateAccountNumber();
+            this.m_Balance.Currency = transactionAccount.Limit.Currency;
+            this.m_Balance.Amount = transactionAccount.Limit.Amount;
         }
         protected override string GenerateAccountNumber()
         {

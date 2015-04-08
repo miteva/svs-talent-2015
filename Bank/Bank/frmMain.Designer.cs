@@ -73,6 +73,9 @@
             this.lblNumber_To = new System.Windows.Forms.Label();
             this.lblId_To = new System.Windows.Forms.Label();
             this.btnMakeTrasaction = new System.Windows.Forms.Button();
+            this.btnMakeGroupTransaction = new System.Windows.Forms.Button();
+            this.lblTransactionLogCount = new System.Windows.Forms.Label();
+            this.lbltransactionLogDetails = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCreateTransactionAccount
@@ -479,12 +482,43 @@
             this.btnMakeTrasaction.UseVisualStyleBackColor = true;
             this.btnMakeTrasaction.Click += new System.EventHandler(this.btnMakeTrasaction_Click);
             // 
+            // btnMakeGroupTransaction
+            // 
+            this.btnMakeGroupTransaction.Location = new System.Drawing.Point(455, 493);
+            this.btnMakeGroupTransaction.Name = "btnMakeGroupTransaction";
+            this.btnMakeGroupTransaction.Size = new System.Drawing.Size(162, 23);
+            this.btnMakeGroupTransaction.TabIndex = 47;
+            this.btnMakeGroupTransaction.Text = "Make Group Transaction";
+            this.btnMakeGroupTransaction.UseVisualStyleBackColor = true;
+            this.btnMakeGroupTransaction.Click += new System.EventHandler(this.btnMakeGroupTransaction_Click);
+            // 
+            // lblTransactionLogCount
+            // 
+            this.lblTransactionLogCount.AutoSize = true;
+            this.lblTransactionLogCount.Location = new System.Drawing.Point(840, 39);
+            this.lblTransactionLogCount.Name = "lblTransactionLogCount";
+            this.lblTransactionLogCount.Size = new System.Drawing.Size(35, 13);
+            this.lblTransactionLogCount.TabIndex = 48;
+            this.lblTransactionLogCount.Text = "label9";
+            // 
+            // lbltransactionLogDetails
+            // 
+            this.lbltransactionLogDetails.AutoSize = true;
+            this.lbltransactionLogDetails.Location = new System.Drawing.Point(808, 232);
+            this.lbltransactionLogDetails.Name = "lbltransactionLogDetails";
+            this.lbltransactionLogDetails.Size = new System.Drawing.Size(35, 13);
+            this.lbltransactionLogDetails.TabIndex = 49;
+            this.lbltransactionLogDetails.Text = "label9";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1077, 662);
+            this.ClientSize = new System.Drawing.Size(1388, 662);
+            this.Controls.Add(this.lbltransactionLogDetails);
+            this.Controls.Add(this.lblTransactionLogCount);
+            this.Controls.Add(this.btnMakeGroupTransaction);
             this.Controls.Add(this.btnMakeTrasaction);
             this.Controls.Add(this.lblEndDate_To);
             this.Controls.Add(this.lblStartDate_To);
@@ -584,6 +618,9 @@
         private System.Windows.Forms.Label lblNumber_To;
         private System.Windows.Forms.Label lblId_To;
         private System.Windows.Forms.Button btnMakeTrasaction;
+        private System.Windows.Forms.Button btnMakeGroupTransaction;
+        private System.Windows.Forms.Label lblTransactionLogCount;
+        private System.Windows.Forms.Label lbltransactionLogDetails;
     }
 }
 

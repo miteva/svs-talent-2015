@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Accounts.Processors;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,13 @@ namespace Accounts.Interfaces
 {
     public interface ITransactionProcessor
     {
-        List<Account> ProcessTransaction(IAccount accountFrom, IAccount accountTo, CurrencyAmount amount, TransactionType transactionType);
+        TransactionStatus ProcessTransaction(IAccount accountFrom, IAccount accountTo, CurrencyAmount amount, TransactionType transactionType);
+        TransactionStatus ProcessGroupTransaction(TransactionType transactionType, CurrencyAmount amount, IAccount[] accounts);
+        TransactionLogEntry LastTransaction { get; }
+        int TransactionCount { get; }
 
+        TransactionLogEntry this[int number] { get; }
     }
+
+ 
 }
