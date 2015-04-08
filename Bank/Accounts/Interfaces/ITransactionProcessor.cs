@@ -8,7 +8,7 @@ namespace Accounts.Interfaces
 {
     public interface ITransactionProcessor
     {
-        void ProcessTransaction(IAccount accountFrom, IAccount accountTo, CurrencyAmount amount, TransactionType transactionType);
+        List<Account> ProcessTransaction(IAccount accountFrom, IAccount accountTo, CurrencyAmount amount, TransactionType transactionType);
 
     }
 }

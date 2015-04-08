@@ -50,8 +50,10 @@
     <Compile Include="Common\TransactionStatus.cs" />
     <Compile Include="Common\TransactionType.cs" />
     <Compile Include="Common\UnitOfTime.cs" />
+    <Compile Include="Helper\AccountHelper.cs" />
     <Compile Include="Interfaces\IAccount.cs" />
     <Compile Include="Interfaces\IDeposiAccount.cs" />
+    <Compile Include="Interfaces\ILoanAccount.cs" />
     <Compile Include="Interfaces\ITransactionAccount.cs" />
     <Compile Include="Interfaces\ITransactionProcessor.cs" />
     <Compile Include="Processors\TransactionProcessor.cs" />

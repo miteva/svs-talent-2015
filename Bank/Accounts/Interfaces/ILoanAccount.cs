@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Accounts.Interfaces
 {
-   public  interface ITransactionAccount : IAccount
+    public interface ILoanAccount: IDeposiAccount
     {
-       CurrencyAmount Limit { get; }
     }
 }

@@ -69,7 +69,7 @@
             this.lblLimitAmount_To = new System.Windows.Forms.Label();
             this.lblBalanceCurrency_To = new System.Windows.Forms.Label();
             this.lblBalanceAmount_To = new System.Windows.Forms.Label();
-            this.labelblCurrencyh_Tol19 = new System.Windows.Forms.Label();
+            this.lblCurrency_To = new System.Windows.Forms.Label();
             this.lblNumber_To = new System.Windows.Forms.Label();
             this.lblId_To = new System.Windows.Forms.Label();
             this.btnMakeTrasaction = new System.Windows.Forms.Button();
@@ -442,14 +442,14 @@
             this.lblBalanceAmount_To.TabIndex = 36;
             this.lblBalanceAmount_To.Text = "lblBalanceAmount_To";
             // 
-            // labelblCurrencyh_Tol19
+            // lblCurrency_To
             // 
-            this.labelblCurrencyh_Tol19.AutoSize = true;
-            this.labelblCurrencyh_Tol19.Location = new System.Drawing.Point(53, 514);
-            this.labelblCurrencyh_Tol19.Name = "labelblCurrencyh_Tol19";
-            this.labelblCurrencyh_Tol19.Size = new System.Drawing.Size(78, 13);
-            this.labelblCurrencyh_Tol19.TabIndex = 35;
-            this.labelblCurrencyh_Tol19.Text = "lblCurrency_To";
+            this.lblCurrency_To.AutoSize = true;
+            this.lblCurrency_To.Location = new System.Drawing.Point(53, 514);
+            this.lblCurrency_To.Name = "lblCurrency_To";
+            this.lblCurrency_To.Size = new System.Drawing.Size(78, 13);
+            this.lblCurrency_To.TabIndex = 35;
+            this.lblCurrency_To.Text = "lblCurrency_To";
             // 
             // lblNumber_To
             // 
@@ -496,7 +496,7 @@
             this.Controls.Add(this.lblLimitAmount_To);
             this.Controls.Add(this.lblBalanceCurrency_To);
             this.Controls.Add(this.lblBalanceAmount_To);
-            this.Controls.Add(this.labelblCurrencyh_Tol19);
+            this.Controls.Add(this.lblCurrency_To);
             this.Controls.Add(this.lblNumber_To);
             this.Controls.Add(this.lblId_To);
             this.Controls.Add(this.cmbInterestUnit);
@@ -580,7 +580,7 @@
         private System.Windows.Forms.Label lblLimitAmount_To;
         private System.Windows.Forms.Label lblBalanceCurrency_To;
         private System.Windows.Forms.Label lblBalanceAmount_To;
-        private System.Windows.Forms.Label labelblCurrencyh_Tol19;
+        private System.Windows.Forms.Label lblCurrency_To;
         private System.Windows.Forms.Label lblNumber_To;
         private System.Windows.Forms.Label lblId_To;
         private System.Windows.Forms.Button btnMakeTrasaction;

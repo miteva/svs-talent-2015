@@ -9,10 +9,11 @@ namespace Accounts.Interfaces
 {
    public  interface  IDeposiAccount :IAccount
     {
-         
+         /// <summary>
+         /// properties
+         /// </summary>
          DateTime StartDate {  get; }
          DateTime EndDate {  get; }
-
          ITransactionAccount TransactionAccount { get; }
     }
 }

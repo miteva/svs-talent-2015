@@ -1,4 +1,5 @@
-﻿using Accounts.Interfaces;
+﻿using Accounts.Helper;
+using Accounts.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Accounts
         private int m_ID;
 
         public int ID {
-            private set {
+             set {
 
                 this.m_ID = value;
             }
@@ -21,13 +22,14 @@ namespace Accounts
             }
         }
         public string Currency { private set; get; }
-        public string Number { private set; get; }
+        public string Number {  set; get; }
 
         public CurrencyAmount m_Balance;
         
 
 
-        public Account(int ID, string Currency, string Number) {
+        public Account(int ID, string Currency, string Number)
+        {
 
             this.ID = ID;
             this.Currency = Currency;
@@ -37,11 +39,12 @@ namespace Accounts
             this.m_Balance.Currency = Currency;
         }
 
-        public Account(string Currency) :this(1,Currency,"X") {
+        public Account(string Currency) :this(AccountHelper.GenerateAccountId(),Currency,"X") {
 
             
             
         }
+        
 
         #region Public Methods
 
@@ -87,6 +90,11 @@ namespace Accounts
             else return TransactionStatus.Failed;
         }
 
+        #endregion
+
+        #region Protected methods
+        protected abstract string GenerateAccountNumber();
+        
         #endregion
 
     }

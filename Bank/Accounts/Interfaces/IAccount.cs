@@ -8,7 +8,18 @@ namespace Accounts.Interfaces
 {
   public  interface IAccount
     {
-         TransactionStatus DebitAmount(CurrencyAmount amount);
+      /// <summary>
+      /// property
+      /// </summary>
+      /// <returns></returns>
+        int ID{get;}
+
+      /// <summary>
+      /// methods
+      /// </summary>
+      /// <param name="amount"></param>
+      /// <returns></returns>
+        TransactionStatus DebitAmount(CurrencyAmount amount);
         TransactionStatus CreditAmount(CurrencyAmount amount);
        
 
