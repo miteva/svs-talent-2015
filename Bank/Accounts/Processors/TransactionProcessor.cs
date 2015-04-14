@@ -1,10 +1,13 @@
 ﻿using Accounts.Accounts;
+using Accounts;
 using Accounts.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Logger;
+using Accounts.Helper;
 
 namespace Accounts.Processors
 {
@@ -45,11 +48,22 @@ namespace Accounts.Processors
             m_transactionLog = new List<TransactionLogEntry>();
         }
 
+        private TransactionLogger m_ExternalLogger;
+       public  TransactionLogger ExternalLogger
+       {
+           set { m_ExternalLogger = value; }
+           get { return m_ExternalLogger; }
+         }
+
+       private void CallExternalLogger(IAccount account, TransactionType transactionType, CurrencyAmount amount) 
+       {
+           ExternalLogger(account, transactionType, amount);
+       }
+
         public TransactionStatus ProcessTransaction(IAccount accountFrom, IAccount accountTo,CurrencyAmount amount,TransactionType transactionType)
         {
             
-            DepositAccount da = (DepositAccount)accountTo;
-            TransactionAccount ta = (TransactionAccount)accountFrom;
+           
             IAccount[] accountsArray = new IAccount[2];
             TransactionStatus status = new TransactionStatus();
 
@@ -57,7 +71,8 @@ namespace Accounts.Processors
             {
                 if (accountTo.CreditAmount(amount) == TransactionStatus.Completed && accountFrom.DebitAmount(amount) == TransactionStatus.Completed)
                 {
-                   
+                    CallExternalLogger(accountTo, transactionType, amount);
+                    CallExternalLogger(accountFrom, transactionType, amount);
                     accountsArray[0] = accountTo;
                     accountsArray[1] = accountFrom;
                    
@@ -72,12 +87,14 @@ namespace Accounts.Processors
 
             if (transactionType == TransactionType.Debit)
            {  accountFrom.DebitAmount(amount);
-               ta.m_Balance.Amount-=amount.Amount;
+           CallExternalLogger(accountFrom, transactionType, amount);
            }
            
             if (transactionType == TransactionType.Credit)
-           { accountFrom.CreditAmount(amount);
-               ta.m_Balance.Amount+=amount.Amount;
+           { 
+                accountFrom.CreditAmount(amount);
+                CallExternalLogger(accountTo, transactionType, amount);
+               
            }
 
 
@@ -110,7 +127,10 @@ namespace Accounts.Processors
                     foreach (Account a in accounts)
                     {
                         if (a != null)
+                        {
                             a.CreditAmount(amount);
+                            CallExternalLogger(a, transactionType, amount);
+                        }
                         else
                             continue;
                     }
@@ -123,7 +143,10 @@ namespace Accounts.Processors
                     foreach (Account a in accounts)
                     {
                         if (a != null)
+                        {
                             a.DebitAmount(amount);
+                            CallExternalLogger(a, transactionType, amount);
+                        }
                         else
                             continue;
                     }
@@ -137,7 +160,7 @@ namespace Accounts.Processors
         private void LogTransaction(TransactionType transactionType, CurrencyAmount amount, IAccount[] accounts, TransactionStatus transactionStatus)
         {
             TransactionLogEntry log = new TransactionLogEntry();
-            log.Accounts = new List<IAccount>();
+            
             log.CurrencyAmount = amount;
             log.TransactionType = transactionType;
             log.Accounts.Add(accounts[0]);
@@ -150,7 +173,11 @@ namespace Accounts.Processors
         static TransactionProcessor()
         {
             sTransactionProcessor = new TransactionProcessor();
+            sTransactionProcessor.ExternalLogger += AccountHelper.LogTransaction;
+            sTransactionProcessor.ExternalLogger += AccountHelper.NotifyNationalBank;
+
         }
+
         public static TransactionProcessor GetTransactionProcessor() {
             
             return sTransactionProcessor;

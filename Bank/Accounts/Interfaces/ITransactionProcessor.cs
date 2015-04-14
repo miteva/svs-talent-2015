@@ -1,4 +1,6 @@
-﻿using Accounts.Processors;
+﻿using Accounts;
+using Accounts.Processors;
+using Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,7 @@ namespace Accounts.Interfaces
         TransactionStatus ProcessGroupTransaction(TransactionType transactionType, CurrencyAmount amount, IAccount[] accounts);
         TransactionLogEntry LastTransaction { get; }
         int TransactionCount { get; }
-
+        TransactionLogger ExternalLogger { set; get; }
         TransactionLogEntry this[int number] { get; }
     }
 

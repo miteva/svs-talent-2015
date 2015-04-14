@@ -6,10 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Accounts.Accounts;
 using Accounts.Helper;
+using MyAttribute;
 
 namespace Accounts.Accounts
 {
-   public class DepositAccount :Account, IDeposiAccount
+     [AccountMetadata(AccountDescription = "Deposit Account", AccountLimitations = "You need to create Transaction Account in order to create this type of Account")]
+     public class DepositAccount :Account, IDeposiAccount
     {
         public TimePeriod m_Period;
 
@@ -21,7 +23,7 @@ namespace Accounts.Accounts
 
         public DepositAccount(string currency, TimePeriod depositPeriod, InterestRate interestRate, DateTime startDate, DateTime endDate, ITransactionAccount transactionAccount) : base(currency)
         {
-
+            
             this.m_Period = new TimePeriod();
             this.m_Period = depositPeriod;
             this.m_Interest = new InterestRate();
@@ -29,15 +31,16 @@ namespace Accounts.Accounts
             this.StartDate = startDate;
             this.EndDate = endDate;
             this.TransactionAccount = new TransactionAccount(transactionAccount.Limit.Amount, transactionAccount.Limit.Currency);
-            int Id = AccountHelper.GenerateAccountId();
-            this.ID = Id;
-            this.Number = GenerateAccountNumber();
-            this.m_Balance.Currency = transactionAccount.Limit.Currency;
-            this.m_Balance.Amount = transactionAccount.Limit.Amount;
+            CurrencyAmount amount = new CurrencyAmount(transactionAccount.Limit.Amount, transactionAccount.Limit.Currency);
+         //   amount.Amount = transactionAccount.Limit.Amount;
+         //   amount.Currency = transactionAccount.Limit.Currency;
+            this.Ballance = amount;
+            
         }
         protected override string GenerateAccountNumber()
         {
-            return AccountHelper.GenerateAccountNumber(typeof(DepositAccount), this.ID);
+            //return AccountHelper.GenerateAccountNumber(typeof(DepositAccount), this.ID);
+            return AccountHelper.GenerateAccountNumber<DepositAccount>(this.ID);
         }
 
         

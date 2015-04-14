@@ -14,5 +14,10 @@ namespace Accounts.Processors
         public List<IAccount> Accounts { get; set; }
         public TransactionStatus Status { get; set; }
 
+        public TransactionLogEntry() {
+
+            Accounts = new List<IAccount>();
+        }
+
     }
 }

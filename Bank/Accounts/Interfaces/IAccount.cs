@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logger;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,8 @@ namespace Accounts.Interfaces
       /// </summary>
       /// <returns></returns>
         int ID{get;}
-
+        CurrencyAmount Ballance {  get; }
+        string Number { set; get; }
       /// <summary>
       /// methods
       /// </summary>
@@ -21,6 +23,7 @@ namespace Accounts.Interfaces
       /// <returns></returns>
         TransactionStatus DebitAmount(CurrencyAmount amount);
         TransactionStatus CreditAmount(CurrencyAmount amount);
+       event EventHandler<Logger.BalanceChangedEventArguments> OnBalanceChanged;
        
 
     }

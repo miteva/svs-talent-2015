@@ -8,8 +8,14 @@ namespace Accounts
 {
   public  struct CurrencyAmount
     {
-        public decimal Amount { set; get; }
-        public string Currency { set; get; }
+      public readonly decimal Amount;
+      public readonly string Currency;
+
+        public CurrencyAmount(decimal amount, string currency) 
+        {
+            this.Amount = amount;
+            this.Currency = currency;
+        }
 
     }
 }

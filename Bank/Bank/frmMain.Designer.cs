@@ -76,6 +76,7 @@
             this.btnMakeGroupTransaction = new System.Windows.Forms.Button();
             this.lblTransactionLogCount = new System.Windows.Forms.Label();
             this.lbltransactionLogDetails = new System.Windows.Forms.Label();
+            this.btnChargeFee = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreateTransactionAccount
@@ -510,12 +511,23 @@
             this.lbltransactionLogDetails.TabIndex = 49;
             this.lbltransactionLogDetails.Text = "label9";
             // 
+            // btnChargeFee
+            // 
+            this.btnChargeFee.Location = new System.Drawing.Point(455, 529);
+            this.btnChargeFee.Name = "btnChargeFee";
+            this.btnChargeFee.Size = new System.Drawing.Size(75, 23);
+            this.btnChargeFee.TabIndex = 50;
+            this.btnChargeFee.Text = "Charge Fee";
+            this.btnChargeFee.UseVisualStyleBackColor = true;
+            this.btnChargeFee.Click += new System.EventHandler(this.btnChargeFee_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1388, 662);
+            this.ClientSize = new System.Drawing.Size(1370, 662);
+            this.Controls.Add(this.btnChargeFee);
             this.Controls.Add(this.lbltransactionLogDetails);
             this.Controls.Add(this.lblTransactionLogCount);
             this.Controls.Add(this.btnMakeGroupTransaction);
@@ -621,6 +633,7 @@
         private System.Windows.Forms.Button btnMakeGroupTransaction;
         private System.Windows.Forms.Label lblTransactionLogCount;
         private System.Windows.Forms.Label lbltransactionLogDetails;
+        private System.Windows.Forms.Button btnChargeFee;
     }
 }
 

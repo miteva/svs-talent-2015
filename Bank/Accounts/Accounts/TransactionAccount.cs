@@ -1,5 +1,6 @@
 ﻿using Accounts.Helper;
 using Accounts.Interfaces;
+using MyAttribute;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Accounts.Accounts
 {
+    [AccountMetadata(AccountDescription = "Transaction Account", AccountLimitations = "You need amount and currency to create this type of Account")]
    public class TransactionAccount :Account, ITransactionAccount
     {
         private CurrencyAmount m_Limit;
@@ -22,22 +24,21 @@ namespace Accounts.Accounts
 
         public TransactionAccount(decimal limitAccount, string currency) :base(currency)
         {
-
-            this.m_Limit = new CurrencyAmount();
-            this.m_Limit.Amount = limitAccount;
-            this.m_Limit.Currency = currency;
-            int Id = AccountHelper.GenerateAccountId();
-            this.ID = Id;
-            this.Number = GenerateAccountNumber();
-            this.m_Balance.Amount = limitAccount;
-            this.m_Balance.Currency = currency;
+            CurrencyAmount amount = new CurrencyAmount(limitAccount,currency);
+           // amount.Amount=limitAccount;
+          //  amount.Currency=currency;
+            this.m_Limit = new CurrencyAmount(limitAccount, currency);
+            //this.m_Limit.Amount = limitAccount;
+            //this.m_Limit.Currency = currency;
+            this.Ballance = amount;
+            
             
         }
 
         
         protected override string GenerateAccountNumber()
        {
-           return AccountHelper.GenerateAccountNumber(typeof(TransactionAccount), this.ID);
+           return AccountHelper.GenerateAccountNumber<TransactionAccount>(this.ID);
          }
 
 
