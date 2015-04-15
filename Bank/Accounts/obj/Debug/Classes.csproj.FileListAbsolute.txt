@@ -11,3 +11,4 @@ C:\Users\Miteva\Documents\GitHub\svs-talent-2015\Bank\Accounts\bin\Debug\Account
 C:\Users\Miteva\Documents\GitHub\svs-talent-2015\Bank\Accounts\bin\Debug\Accounts.pdb
 C:\Users\Miteva\Documents\GitHub\svs-talent-2015\Bank\Accounts\obj\Debug\Accounts.dll
 C:\Users\Miteva\Documents\GitHub\svs-talent-2015\Bank\Accounts\obj\Debug\Accounts.pdb
+C:\Users\student\Documents\GitHub\svs-talent-2015\Bank\Accounts\obj\Debug\Classes.csprojResolveAssemblyReference.cache
