@@ -183,6 +183,12 @@ namespace Accounts.Processors
             return sTransactionProcessor;
         }
         #endregion
+
+
+        public TransactionStatus ChargeProcessingFee(CurrencyAmount amount, IEnumerable<IAccount> accounts)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     }

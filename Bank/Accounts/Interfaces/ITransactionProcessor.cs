@@ -17,6 +17,7 @@ namespace Accounts.Interfaces
         int TransactionCount { get; }
         TransactionLogger ExternalLogger { set; get; }
         TransactionLogEntry this[int number] { get; }
+        TransactionStatus ChargeProcessingFee(CurrencyAmount amount, IEnumerable<IAccount> accounts);
     }
 
  

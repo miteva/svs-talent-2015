@@ -924,7 +924,8 @@ namespace Bank
             CurrencyAmount fee=new CurrencyAmount(15,"MKD");
             TransactionLogEntry lastTransaction= processor.LastTransaction;
             IEnumerable<IAccount> accounts=lastTransaction.Accounts;
-            processor.ChargeProcessingFee(fee, accounts);
+          //  processor.ChargeProcessingFee(fee, accounts);
+            ProcessorExtensions.ChargeProcessingFee(processor, fee, accounts);
             DisplayLastTransactionDetail();
         }
     }
