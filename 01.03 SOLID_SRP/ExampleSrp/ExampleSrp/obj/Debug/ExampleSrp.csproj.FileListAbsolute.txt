@@ -1,0 +1,1 @@
+E:\svs-talent-2015-master (1)\svs-talent-2015-master\00-C# Basics\Labs\01.03 SOLID_SRP\ExampleSrp\ExampleSrp\obj\Debug\ExampleSrp.csprojResolveAssemblyReference.cache
