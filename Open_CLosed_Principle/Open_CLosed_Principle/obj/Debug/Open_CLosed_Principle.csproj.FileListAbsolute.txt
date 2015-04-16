@@ -1,0 +1,4 @@
+c:\users\miteva\documents\visual studio 2013\Projects\Open_CLosed_Principle\Open_CLosed_Principle\bin\Debug\Open_CLosed_Principle.dll
+c:\users\miteva\documents\visual studio 2013\Projects\Open_CLosed_Principle\Open_CLosed_Principle\bin\Debug\Open_CLosed_Principle.pdb
+c:\users\miteva\documents\visual studio 2013\Projects\Open_CLosed_Principle\Open_CLosed_Principle\obj\Debug\Open_CLosed_Principle.dll
+c:\users\miteva\documents\visual studio 2013\Projects\Open_CLosed_Principle\Open_CLosed_Principle\obj\Debug\Open_CLosed_Principle.pdb
