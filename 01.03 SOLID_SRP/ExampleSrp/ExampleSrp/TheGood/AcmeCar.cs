@@ -10,7 +10,7 @@ namespace ExampleSrp.TheGood
    public class AcmeCar
     {
         public LockState IsLocked { get; private set; }
-        IStateChangeLogger device = StateChangeLogger.GetDevice();
+        ILogger logger = Logger.GetLogger();
         IExceptionLogger exceptionLogger = ExceptionLogger.GetExceptionLogger();
         int choose = 0;
         
@@ -26,7 +26,9 @@ namespace ExampleSrp.TheGood
 
                 //log state change in computer
                 ChooseDeviceForLogging();
-                device.LogToAppropriateDevice(choose,"CarLocked");
+                ILogger loggerToLog= logger.CreateLogger(choose);
+                logger.Log("CarLocked");
+                
 
                 //ClientLogger.ComputerLogChangeState("CarLocked");
                
@@ -49,9 +51,9 @@ namespace ExampleSrp.TheGood
                 this.IsLocked = LockState.Unlocked;
 
                 ChooseDeviceForLogging();
-                IStateChangeLogger logger = device.CreateLogger(choose);
-                logger.LogStateChange("CarUnlocked!");
-               // device.LogToAppropriateDevice(choose, "CarUnlocked");
+                ILogger loggerToLog = logger.CreateLogger(choose);
+                logger.Log("CarUnlocked");
+              
 
                 //ClientLogger.ComputerLogChangeState("CarUnlock");
 
@@ -69,7 +71,8 @@ namespace ExampleSrp.TheGood
         public void CarSold()
         {
             ChooseDeviceForLogging();
-            device.LogToAppropriateDevice(choose, "Car is sold");
+            ILogger loggerToLog = logger.CreateLogger(choose);
+            logger.Log("CarSold");
         }
 
         public void ChooseDeviceForLogging()

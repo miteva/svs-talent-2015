@@ -46,11 +46,9 @@
     <Compile Include="TheGood\ComputerLogger.cs" />
     <Compile Include="TheGood\ILogger.cs" />
     <Compile Include="TheGood\Logger.cs" />
-    <Compile Include="TheGood\StateChangeLogger.cs" />
     <Compile Include="TheGood\ExceptionLogger.cs" />
     <Compile Include="TheGood\IClientLogger.cs" />
     <Compile Include="TheGood\IComputerLogger.cs" />
-    <Compile Include="TheGood\IStateChangeLogger.cs" />
     <Compile Include="TheGood\IExceptionLogger.cs" />
     <Compile Include="TheGood\IPhoneLogger.cs" />
     <Compile Include="TheGood\ITabletLogger.cs" />

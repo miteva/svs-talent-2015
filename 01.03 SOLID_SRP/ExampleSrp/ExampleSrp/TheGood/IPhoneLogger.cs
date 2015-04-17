@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExampleSrp.TheGood
 {
-    public interface IPhoneLogger :ILogger
+    public interface IPhoneLogger : ILogger
     {
-         void PhoneLog(string state);
+        
     }
 }

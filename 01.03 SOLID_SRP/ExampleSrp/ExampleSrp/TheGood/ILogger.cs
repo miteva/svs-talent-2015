@@ -8,9 +8,8 @@ namespace ExampleSrp.TheGood
 {
     public interface ILogger
     {
-        IComputerLogger createComputerLogger();
-        ITabletLogger createTabletLogger();
-        IPhoneLogger createPhoneLogger();
+        void Log(string state);
+        ILogger CreateLogger(int device);
 
     }
 }

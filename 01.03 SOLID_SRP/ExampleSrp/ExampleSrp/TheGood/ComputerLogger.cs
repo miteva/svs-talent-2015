@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExampleSrp.TheGood
 {
-  public  class ComputerLogger : IComputerLogger
+  public  class ComputerLogger :Logger, IComputerLogger
     {
         private static ComputerLogger sComputerLogger;
         static ComputerLogger()
@@ -24,10 +24,7 @@ namespace ExampleSrp.TheGood
 
 
 
-        public void ComputerLog(string state)
-        {
-            ClientLogger.ComputerLogChangeState(state);
-        }
+      
        
     }
 }

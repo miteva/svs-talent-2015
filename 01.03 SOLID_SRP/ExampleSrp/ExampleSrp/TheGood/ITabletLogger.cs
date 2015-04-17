@@ -8,6 +8,6 @@ namespace ExampleSrp.TheGood
 {
     public interface ITabletLogger :ILogger
     {
-        void TabletLog(string state);
+        
     }
 }

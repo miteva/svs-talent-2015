@@ -6,24 +6,64 @@ using System.Threading.Tasks;
 
 namespace ExampleSrp.TheGood
 {
-    class Logger : ILogger
+    public class Logger : ILogger
     {
-        public IComputerLogger createComputerLogger()
+         private static Logger sLogger;
+
+        static Logger()
         {
-            ComputerLogger computerLogger = ComputerLogger.GetComputerLogger();
-            return computerLogger;
+            sLogger = new Logger();
         }
 
-        public IPhoneLogger createPhoneLogger()
+        public static Logger GetLogger()
         {
-            PhoneLoger phoneLogger = PhoneLoger.GetPhoneLogger();
-            return phoneLogger;
+
+            return sLogger ;
         }
 
-        public ITabletLogger createTabletLogger()
+
+        public void Log(string state)
         {
-            TabletLogger tabletLogger = TabletLogger.GetTabletLogger();
-            return tabletLogger;
+            ClientLogger.ComputerLogChangeState(state);
         }
+
+
+        public ILogger CreateLogger(int device)
+        {
+
+
+            if (device == (int)Device.Computer)
+            {
+                IComputerLogger computerLoger = ComputerLogger.GetComputerLogger();
+                return computerLoger;
+
+            }
+            else if (device == (int)Device.Tablet)
+            {
+                ITabletLogger tabletLoger = TabletLogger.GetTabletLogger();
+                return tabletLoger;
+
+            }
+            else if (device == (int)Device.Phone)
+            {
+                IPhoneLogger phoneLoger = PhoneLoger.GetPhoneLogger();
+                return phoneLoger;
+
+            }
+
+            else
+            {
+                ExceptionLogger exceptionLogger = ExceptionLogger.GetExceptionLogger();
+                exceptionLogger.logException("no such device");
+                return null;
+            }
+        }
+    }
+
+    public enum Device 
+    {
+        Computer,
+        Tablet,
+        Phone
     }
 }

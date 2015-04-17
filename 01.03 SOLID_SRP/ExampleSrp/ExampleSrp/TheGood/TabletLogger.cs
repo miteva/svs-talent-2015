@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExampleSrp.TheGood
 {
-   public class TabletLogger : ITabletLogger
+   public class TabletLogger :Logger, ITabletLogger
     {
         private static TabletLogger sTabletLogger;
 
@@ -21,9 +21,6 @@ namespace ExampleSrp.TheGood
             return sTabletLogger;
         }
 
-        public void TabletLog(string state)
-        {
-            ClientLogger.ComputerLogChangeState(state);
-        }
+        
     }
 }

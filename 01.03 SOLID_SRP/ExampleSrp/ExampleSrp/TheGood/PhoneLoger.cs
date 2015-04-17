@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExampleSrp.TheGood
 {
-   public class PhoneLoger :IPhoneLogger
+   public class PhoneLoger : Logger, IPhoneLogger
     {
         private static PhoneLoger sPhoneLogger;
 
@@ -20,9 +20,6 @@ namespace ExampleSrp.TheGood
 
             return sPhoneLogger;
         }
-        public void PhoneLog(string state)
-        {
-            ClientLogger.ComputerLogChangeState(state);
-        }
+        
     }
 }
