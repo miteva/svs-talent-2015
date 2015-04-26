@@ -1,0 +1,12 @@
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\Registar.DataLayer.dll.config
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\Registar.DataLayer.dll
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\Registar.DataLayer.pdb
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\EntityFramework.dll
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\Registar.DomainModel.dll
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\Registar.DomainModel.pdb
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\EntityFramework.xml
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\obj\Debug\Registar.DataLayer.csprojResolveAssemblyReference.cache
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\obj\Debug\Registar.DataLayer.dll
+E:\GitHub\svs-talent-2015\MvcFirst\MvcFirst\Registar.DataLayer\obj\Debug\Registar.DataLayer.pdb
