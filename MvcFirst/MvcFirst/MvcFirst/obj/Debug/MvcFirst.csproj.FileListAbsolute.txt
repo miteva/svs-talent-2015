@@ -39,3 +39,4 @@ C:\Users\Miteva\Documents\GitHub\svs-talent-2015\MvcFirst\MvcFirst\MvcFirst\bin\
 C:\Users\Miteva\Documents\GitHub\svs-talent-2015\MvcFirst\MvcFirst\MvcFirst\bin\Antlr3.Runtime.pdb
 C:\Users\Miteva\Documents\GitHub\svs-talent-2015\MvcFirst\MvcFirst\MvcFirst\bin\Newtonsoft.Json.xml
 C:\Users\Miteva\Documents\GitHub\svs-talent-2015\MvcFirst\MvcFirst\MvcFirst\bin\System.Web.Optimization.xml
+C:\Users\Miteva\Documents\GitHub\svs-talent-2015\MvcFirst\MvcFirst\MvcFirst\obj\Debug\MvcFirst.csprojResolveAssemblyReference.cache
