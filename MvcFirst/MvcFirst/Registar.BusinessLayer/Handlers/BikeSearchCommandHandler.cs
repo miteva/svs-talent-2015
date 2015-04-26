@@ -31,25 +31,26 @@ namespace Registar.BusinessLayer.Handlers
                 //so toa sto query e IEnumarable moze da mu lepime poveke f-cii i toa nema da se izvrsi dodeka ne povikame ToList na kraj 
                 //pred da go napolnime _result
 
-                var query = from b in context.Bikes.Include("BikeHistory") //LazyLoad, ova se konfigurira vo Context
-                           select b;
-                if (!string.IsNullOrEmpty(command.Colour))
-                {
-                    query = query.Where(x => x.Colour == command.Colour);
-                }
-                if (!string.IsNullOrEmpty(command.Producer))
-                {
-                    query = query.Where(x => x.Prdoucer == command.Producer);
-                }
+                //var query = from b in context.Bikes.Include("BikeHistory") //LazyLoad, ova se konfigurira vo Context
+                  //         select b;
+                //if (!string.IsNullOrEmpty(command.Colour))
+                //{
+                //    query = query.Where(x => x.Colour == command.Colour);
+                //}
+                //if (!string.IsNullOrEmpty(command.Producer))
+                //{
+                //    query = query.Where(x => x.Prdoucer == command.Producer);
+                //}
 
-                //se zema od koja strana da se pocne i kolku tocaci da se zemat
-                query = query.OrderBy(x => x.BikeId).Skip(command.PageIndex*command.PageSize).Take(command.PageSize);
+                ////se zema od koja strana da se pocne i kolku tocaci da se zemat
+                //query = query.OrderBy(x => x.BikeId).Skip(command.PageIndex*command.PageSize).Take(command.PageSize);
 
                 //_result e napolnet so tocaci od query
-                _result.Result = query.ToList();
+                //_result.Result = query.ToList();
 
 
-                bikes = context.Bikes.OrderBy(p => p.BikeId).Take(10).ToList();
+                var bikesDB = context.Bikes.OrderBy(x=>x.BikeId).Take(10);
+                bikes = bikesDB.ToList();
                 //_result e napolent so bikes
                 _result.Result = bikes;
 

@@ -13,7 +13,8 @@ namespace Registar.DataLayer
      public   DbSet<Bike> Bikes { set; get; }
 
 
-        public RegistarDbContext() : base("RegistarDb")
+     public RegistarDbContext()
+         : base("RegistarDb")
         {
             Bikes = this.Set<Bike>();
         }
